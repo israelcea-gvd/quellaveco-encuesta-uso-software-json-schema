@@ -1,9 +1,11 @@
 // src/MyConditionalForm.jsx
-import React, { useState } from 'react';
+import { useState } from 'react';
 // CHANGE THIS LINE: Import Form from the Chakra UI theme package
 // import Form from '@rjsf/core';
 import Form from '@rjsf/chakra-ui';
 import validator from '@rjsf/validator-ajv8';
+import type { DescriptionFieldProps } from '@rjsf/utils';
+import type { RJSFSchema } from '@rjsf/utils';
 
 const formDescription = `Estimado(a) colega,<br><br>
 Como parte de la consultoría para optimizar el uso y la gestión del software en la Gerencia de Geología, necesitamos recopilar información sobre las herramientas que utilizas habitualmente. Tu participación es fundamental para obtener una visión clara de cómo se utiliza el software en la práctica y para identificar oportunidades de mejora que beneficien a nuestro equipo.<br><br>
@@ -14,7 +16,7 @@ Geovalidata: Equipo de Consultoría / Gerencia de Geología Quellaveco`;
 
 
 // Your provided JSON Schema
-const schema = {
+const schema: RJSFSchema = {
   title: "Encuesta de Uso de Software en Gerencia de Geología",
   description: formDescription,
   type: "object",
@@ -87,12 +89,12 @@ const schema = {
                   "Experto / Capacitador o Desarrollador Interno: No solo lo domino, sino que tengo la capacidad de capacitar a otros en su uso, o de desarrollar soluciones y automatizaciones específicas dentro del software."
                 ]
               },
-              fileUploadMinePlan: {
-                type: "string",
-                title: "¿Tienes alguna certificación oficial de MinePlan? Adjunta el badge o diploma de tu certificación oficial de MinePlan (si aplica)",
-                format: "data-url",
-                "ui:widget": "file"
-              },
+              // fileUploadMinePlan: {
+              //   type: "string",
+              //   title: "¿Tienes alguna certificación oficial de MinePlan? Adjunta el badge o diploma de tu certificación oficial de MinePlan (si aplica)",
+              //   format: "data-url",
+              //   "ui:widget": "file"
+              // },
               modulosMinePlan: {
                 type: "string",
                 title: "¿Qué módulos de MinePlan utilizas en las funciones correspondientes a tu cargo? (Si no conoce los nombres de los módulos, describa las actividades que realiza en el software)",
@@ -138,12 +140,12 @@ const schema = {
                   "Experto / Capacitador o Desarrollador Interno: No solo lo domino, sino que tengo la capacidad de capacitar a otros en su uso, o de desarrollar soluciones y automatizaciones específicas dentro del software."
                 ]
               },
-              fileUploadLeapFrog: {
-                type: "string",
-                title: "¿Tienes alguna certificación oficial de LeapFrog? Adjunta el badge o diploma de tu certificación oficial de LeapFrog (si aplica)",
-                format: "data-url",
-                "ui:widget": "file"
-              },
+              // fileUploadLeapFrog: {
+              //   type: "string",
+              //   title: "¿Tienes alguna certificación oficial de LeapFrog? Adjunta el badge o diploma de tu certificación oficial de LeapFrog (si aplica)",
+              //   format: "data-url",
+              //   "ui:widget": "file"
+              // },
               modulosLeapFrog: {
                 type: "string",
                 title: "¿Qué módulos de LeapFrog utilizas en las funciones correspondientes a tu cargo? (Si no conoce los nombres de los módulos, describa las actividades que realiza en el software)",
@@ -189,12 +191,12 @@ const schema = {
                   "Experto / Capacitador o Desarrollador Interno: No solo lo domino, sino que tengo la capacidad de capacitar a otros en su uso, o de desarrollar soluciones y automatizaciones específicas dentro del software."
                 ]
               },
-              fileUploadCentral: {
-                type: "string",
-                title: "¿Tienes alguna certificación oficial de Central? Adjunta el badge o diploma de tu certificación oficial de Central (si aplica)",
-                format: "data-url",
-                "ui:widget": "file"
-              },
+              // fileUploadCentral: {
+              //   type: "string",
+              //   title: "¿Tienes alguna certificación oficial de Central? Adjunta el badge o diploma de tu certificación oficial de Central (si aplica)",
+              //   format: "data-url",
+              //   "ui:widget": "file"
+              // },
               modulosCentral: {
                 type: "string",
                 title: "¿Qué módulos de Central utilizas en las funciones correspondientes a tu cargo? (Si no conoce los nombres de los módulos, describa las actividades que realiza en el software)",
@@ -240,12 +242,12 @@ const schema = {
                   "Experto / Capacitador o Desarrollador Interno: No solo lo domino, sino que tengo la capacidad de capacitar a otros en su uso, o de desarrollar soluciones y automatizaciones específicas dentro del software."
                 ]
               },
-              fileUploadStudioRM: {
-                type: "string",
-                title: "¿Tienes alguna certificación oficial de Studio RM? Adjunta el badge o diploma de tu certificación oficial de Studio RM (si aplica)",
-                format: "data-url",
-                "ui:widget": "file"
-              },
+              // fileUploadStudioRM: {
+              //   type: "string",
+              //   title: "¿Tienes alguna certificación oficial de Studio RM? Adjunta el badge o diploma de tu certificación oficial de Studio RM (si aplica)",
+              //   format: "data-url",
+              //   "ui:widget": "file"
+              // },
               modulosStudioRM: {
                 type: "string",
                 title: "¿Qué módulos de Studio RM utilizas en las funciones correspondientes a tu cargo? (Si no conoce los nombres de los módulos, describa las actividades que realiza en el software)",
@@ -291,12 +293,12 @@ const schema = {
                   "Experto / Capacitador o Desarrollador Interno: No solo lo domino, sino que tengo la capacidad de capacitar a otros en su uso, o de desarrollar soluciones y automatizaciones específicas dentro del software."
                 ]
               },
-              fileUploadSupervisor: {
-                type: "string",
-                title: "¿Tienes alguna certificación oficial de Supervisor? Adjunta el badge o diploma de tu certificación oficial de Supervisor (si aplica)",
-                format: "data-url",
-                "ui:widget": "file"
-              },
+              // fileUploadSupervisor: {
+              //   type: "string",
+              //   title: "¿Tienes alguna certificación oficial de Supervisor? Adjunta el badge o diploma de tu certificación oficial de Supervisor (si aplica)",
+              //   format: "data-url",
+              //   "ui:widget": "file"
+              // },
               modulosSupervisor: {
                 type: "string",
                 title: "¿Qué módulos de Supervisor utilizas en las funciones correspondientes a tu cargo? (Si no conoce los nombres de los módulos, describa las actividades que realiza en el software)",
@@ -342,12 +344,12 @@ const schema = {
                   "Experto / Capacitador o Desarrollador Interno: No solo lo domino, sino que tengo la capacidad de capacitar a otros en su uso, o de desarrollar soluciones y automatizaciones específicas dentro del software."
                 ]
               },
-              fileUploadIsatis: {
-                type: "string",
-                title: "¿Tienes alguna certificación oficial de Isatis? Adjunta el badge o diploma de tu certificación oficial de Isatis (si aplica)",
-                format: "data-url",
-                "ui:widget": "file"
-              },
+              // fileUploadIsatis: {
+              //   type: "string",
+              //   title: "¿Tienes alguna certificación oficial de Isatis? Adjunta el badge o diploma de tu certificación oficial de Isatis (si aplica)",
+              //   format: "data-url",
+              //   "ui:widget": "file"
+              // },
               modulosIsatis: {
                 type: "string",
                 title: "¿Qué módulos de Isatis utilizas en las funciones correspondientes a tu cargo? (Si no conoce los nombres de los módulos, describa las actividades que realiza en el software)",
@@ -363,11 +365,17 @@ const schema = {
       },
     },
   ],
-} as const;
+};
 
-// Custom DescriptionFieldTemplate to render HTML
-const DescriptionFieldTemplate = ({ description }) => (
-  <div style={{ marginBottom: 16, textAlign: "left"  }}>
+// // Custom DescriptionFieldTemplate to render HTML
+// const DescriptionFieldTemplate = ({ description }) => (
+//   <div style={{ marginBottom: 16, textAlign: "left"  }}>
+//     <div dangerouslySetInnerHTML={{ __html: description }} />
+//   </div>
+// );
+
+const DescriptionFieldTemplate = ({ description }: DescriptionFieldProps) => (
+  <div style={{ marginBottom: 16, textAlign: "left" }}>
     <div dangerouslySetInnerHTML={{ __html: description }} />
   </div>
 );
@@ -513,7 +521,7 @@ moduloIsatis: {
         }
         }
     }
-} as const;
+};
 
 // Your initial form data
 const initialFormData = {
@@ -522,22 +530,23 @@ const initialFormData = {
 };
 
 function MyConditionalForm() {
-  const [formData, setFormData] = useState(initialFormData);
+  // const [formData, setFormData] = useState(initialFormData);
+  const [formData] = useState(initialFormData);
 
-  const handleSubmit = ({ formData, errors }) => {
-    console.log("Data submitted:", formData);
-    console.log("Errors:", errors);
-    // Here you would typically send formData to your backend
-  };
+  // const handleSubmit = ({ formData, errors }) => {
+  //   console.log("Data submitted:", formData);
+  //   console.log("Errors:", errors);
+  //   // Here you would typically send formData to your backend
+  // };
 
-  const handleChange = ({ formData }) => {
-    setFormData(formData);
-    console.log("Form data changed:", formData);
-  };
+  // const handleChange = ({ formData }) => {
+  //   setFormData(formData);
+  //   console.log("Form data changed:", formData);
+  // };
 
-  const handleError = (errors) => {
-    console.log("Errors:", errors);
-  };
+  // const handleError = (errors) => {
+  //   console.log("Errors:", errors);
+  // };
 
   return (
     <div style={{ maxWidth: '600px', margin: '20px auto', padding: '20px', border: '1px solid #ccc', borderRadius: '8px', boxShadow: '2px 2px 10px rgba(0,0,0,0.1)' }}>
@@ -548,9 +557,9 @@ function MyConditionalForm() {
         uiSchema={uiSchema}
         formData={formData}
         validator={validator}
-        onSubmit={handleSubmit}
-        onChange={handleChange}
-        onError={handleError}
+        // onSubmit={handleSubmit}
+        // onChange={handleChange}
+        // onError={handleError}
         templates={{ DescriptionFieldTemplate }}
       />
     </div>

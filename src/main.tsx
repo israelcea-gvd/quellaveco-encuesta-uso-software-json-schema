@@ -35,10 +35,15 @@ const colors = {
 
 const theme = extendTheme({ colors });
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <ChakraProvider theme={theme}> {/* Wrap your App with ChakraProvider and pass the custom theme */}
-      <App />
-    </ChakraProvider>
-  </React.StrictMode>,
-);
+const rootElement = document.getElementById('root');
+if (rootElement) {
+  ReactDOM.createRoot(rootElement).render(
+    <React.StrictMode>
+      <ChakraProvider theme={theme}> {/* Wrap your App with ChakraProvider and pass the custom theme */}
+        <App />
+      </ChakraProvider>
+    </React.StrictMode>,
+  );
+} else {
+  throw new Error("Root element with id 'root' not found");
+}
